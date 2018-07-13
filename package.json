@@ -24,7 +24,7 @@
     "@types/semver": "^5.4.0",
     "rimraf": "^2.6.2",
     "semver": "^5.4.1",
-    "ts-framework": "git+https://gitlab.devnup.com/npm/ts-framework.git#dev",
+    "ts-framework": "nxtep-io/ts-framework#master",
     "typescript": "^2.5.3"
   },
   "devDependencies": {
