@@ -1,6 +1,6 @@
 {
   "name": "ts-framework-versioning",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A minimalistic web framework for TS",
   "author": "Luis Brito <luis@devnup.com>",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@types/semver": "^5.4.0",
     "rimraf": "^2.6.2",
     "semver": "^5.4.1",
-    "ts-framework": "nxtep-io/ts-framework#master",
+    "ts-framework": "nxtep-io/ts-framework#v2",
     "typescript": "^2.5.3"
   },
   "devDependencies": {

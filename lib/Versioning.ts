@@ -1,7 +1,8 @@
 import * as semver from 'semver';
-import { HttpError, BaseRequest, BaseResponse, HttpCode } from "ts-framework";
+import { Logger, HttpError, BaseRequest, BaseResponse, HttpCode } from "ts-framework";
 
 export interface VersioningOptions {
+  verbose?: boolean;
   current: string;
   minimum?: string;
   recommended?: string;
@@ -19,6 +20,10 @@ export default class Versioning {
    * @param next The reference to the middleware chain
    */
   public static middleware(options: VersioningOptions) {
+    if (options.verbose) {
+      Logger.info(`Initializing server middleware: Versioning`);
+    }
+
     return (req: BaseRequest, res: BaseResponse, next: Function) => {
       // Add the current server version to the response
       res.set(options.header || 'X-API-Version', options.current);

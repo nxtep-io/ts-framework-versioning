@@ -1,5 +1,6 @@
 import { BaseRequest, BaseResponse } from "ts-framework";
 export interface VersioningOptions {
+    verbose?: boolean;
     current: string;
     minimum?: string;
     recommended?: string;
