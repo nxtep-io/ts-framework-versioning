@@ -1,25 +1,27 @@
-import { Versioning } from "../lib";
 import * as request from 'supertest';
 import Server from 'ts-framework';
+import { Versioning } from "../lib";
 
 describe('lib.Server', () => {
   class TestServer extends Server {
     constructor() {
       super({
         port: process.env.PORT as any || 3333,
-        routes: {
-          get: { '/': (req, res) => res.success({ test: 'ok' }) }
+        router: {
+          routes: {
+            get: { '/': (req, res) => res.success({ test: 'ok' }) }
+          },
         },
       })
     }
 
-    public register() {
+    public async onMount() {
       this.app.use(Versioning.middleware({
         current: '1.2.3',
         minimum: '1.2.0',
         recommended: '1.2.1',
       }))
-      return super.register();
+      return super.onMount();
     }
   }
 
@@ -119,6 +121,4 @@ describe('lib.Server', () => {
       .expect('X-API-Recommended-Version', '1.2.1')
       .expect(400);
   });
-
-
 });

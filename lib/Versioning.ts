@@ -1,5 +1,6 @@
 import * as semver from 'semver';
-import { Logger, HttpError, BaseRequest, BaseResponse, HttpCode } from "ts-framework";
+import { Logger } from 'ts-framework-common';
+import { HttpError, BaseRequest, BaseResponse, HttpCode } from "ts-framework";
 
 export interface VersioningOptions {
   verbose?: boolean;
@@ -7,6 +8,7 @@ export interface VersioningOptions {
   minimum?: string;
   recommended?: string;
   header?: string;
+  logger?: Logger;
   requestedHeader?: string;
   recommendedHeader?: string;
 }
@@ -20,8 +22,10 @@ export default class Versioning {
    * @param next The reference to the middleware chain
    */
   public static middleware(options: VersioningOptions) {
+    const logger = options.logger || Logger.getInstance();
+
     if (options.verbose) {
-      Logger.info(`Initializing server middleware: Versioning`);
+      logger.info(`Initializing server middleware: Versioning`);
     }
 
     return (req: BaseRequest, res: BaseResponse, next: Function) => {
