@@ -1,1 +1,1 @@
-export { default as Versioning } from './Versioning';
+export { default as Versioning, VersioningOptions } from './Versioning';
