@@ -1,5 +1,5 @@
 import * as semver from 'semver';
-import { Logger } from 'ts-framework-common';
+import { Logger, LoggerInstance } from 'ts-framework-common';
 import { HttpError, BaseRequest, BaseResponse, HttpCode } from "ts-framework";
 
 export interface VersioningOptions {
@@ -8,7 +8,7 @@ export interface VersioningOptions {
   minimum?: string;
   recommended?: string;
   header?: string;
-  logger?: Logger;
+  logger?: LoggerInstance;
   requestedHeader?: string;
   recommendedHeader?: string;
 }

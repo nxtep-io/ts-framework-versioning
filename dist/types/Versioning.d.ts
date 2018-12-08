@@ -1,4 +1,4 @@
-import { Logger } from 'ts-framework-common';
+import { LoggerInstance } from 'ts-framework-common';
 import { BaseRequest, BaseResponse } from "ts-framework";
 export interface VersioningOptions {
     verbose?: boolean;
@@ -6,7 +6,7 @@ export interface VersioningOptions {
     minimum?: string;
     recommended?: string;
     header?: string;
-    logger?: Logger;
+    logger?: LoggerInstance;
     requestedHeader?: string;
     recommendedHeader?: string;
 }
