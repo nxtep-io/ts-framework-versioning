@@ -1,6 +1,6 @@
 {
   "name": "ts-framework-versioning",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A minimalistic web framework for TS",
   "author": "Luis Brito <luis@nxtep.io>",
   "license": "MIT",
@@ -14,19 +14,19 @@
     "url": "https://github.com/nxtep-io/ts-framework-versioning.git"
   },
   "scripts": {
-    "build": "npm run -s clean && ./node_modules/.bin/tsc",
-    "clean": "./node_modules/.bin/rimraf ./dist/",
-    "test": "./node_modules/.bin/jest --config jest.json",
-    "precommit": "npm test",
+    "build": "yarn run -s clean && tsc",
+    "clean": "rimraf ./dist/",
+    "test": "jest --config jest.json",
+    "precommit": "yarn test",
     "coveralls": "((cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js) || true)"
   },
   "dependencies": {
     "@types/semver": "^5.4.0",
     "rimraf": "^2.6.2",
     "semver": "^5.4.1",
-    "ts-framework": "nxtep-io/ts-framework#v2.1",
-    "ts-framework-common": "nxtep-io/ts-framework-common#2.2.0",
-    "typescript": "^2.5.3"
+    "ts-framework": "nxtep-io/ts-framework#2.6.0",
+    "ts-framework-common": "nxtep-io/ts-framework-common#2.4.2",
+    "typescript": "^3.5.3"
   },
   "devDependencies": {
     "@types/jest": "^21.1.2",

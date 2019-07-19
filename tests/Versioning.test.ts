@@ -1,8 +1,11 @@
 import * as request from 'supertest';
 import Server from 'ts-framework';
+import { Logger } from 'ts-framework-common';
 import { Versioning } from "../lib";
 
 describe('lib.Server', () => {
+  Logger.initialize();
+
   class TestServer extends Server {
     constructor() {
       super({
